@@ -11,20 +11,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="icon" type="image/png" href="assets/images/ui/favicon.png">
+    <script src="js/disclaimer.js" defer></script>
 </head>
 <body>
-    <div class="home-wrapper">
+    <div id="desktop-disclaimer" class="disclaimer-overlay">
+        <p>This online portfolio exhibit is optimized for desktop and tablet viewing.</p>
+    </div>
+    <div class="home-wrapper main-content hidden">
         <header class="home-header">
             <img src="assets/images/ui/typTitle.png" alt="Title Graphic">
         </header>
-        <div class="button-group home-buttons">
-            <a href="gallery.html" class="btn-link">
-                <button class="yellow-btn">Gallery</button>
-            </a> 
-            <a href="about.html" class="btn-link">
-                <button class="yellow-btn">About</button>
-            </a>
-        </div>
+        <nav class="home-nav">
+            <a href="gallery.html" class="nav-link">GALLERY</a>
+            <span class="nav-separator">|</span>
+            <a href="about.html" class="nav-link">ABOUT</a>
+        </nav>
     </div>
+    <script src="disclaimer.js"></script>
 </body>
 </html>

@@ -82,15 +82,21 @@ a {
   position: absolute;
   top: 24px;
   left: 24px;
-  color: #FFA500;
-  text-decoration: none;
-  font-weight: bold;
-  letter-spacing: 0.5px;
+  color: #ffcf00 !important;
+  text-decoration: none !important;
+  font-size: 1.6rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
 }
 
 .returnLink:hover {
-  text-decoration: underline;
+  color: #ffe680 !important;
+  transform: scale(1.15);
+  text-decoration: none !important;
 }
+
 
 /* Page decor */
 .decor01 {
@@ -126,6 +132,20 @@ a {
 
 .yellow-line::before { left: 0; }
 .yellow-line::after { right: 0; }
+
+.decor02 {
+  position: fixed;
+  bottom: -2%;
+  right: -2%;
+  width: 28vw;
+  max-width: 450px;
+  min-width: 250px;
+  height: auto;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
 
 /* YouTube embeds */
 .modal {
@@ -214,20 +234,39 @@ a {
 
 /* Info modals */
 #open-info-btn, #open-mini-gallery {
-  background-color: #ffcf00;
-  color: #000000;
-  border: none;
   font-family: Arial, sans-serif;
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   padding: 12px 24px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-#open-info-btn:hover, #open-mini-gallery:hover {
-  background-color: #e0a800;
+#open-info-btn {
+  background-color: #ffcf00;
+  color: #000000;
+  border: none;
+}
+
+#open-info-btn:hover {
+  background-color: #ffe680;
+  transform: scale(1.05);
+}
+
+#open-mini-gallery {
+  background-color: #000000;
+  color: #ffcf00;
+  border: 2px solid #ffcf00;
+  padding: 10px 22px;
+}
+
+#open-mini-gallery:hover {
+  color: #ffe680;
+  border-color: #ffe680;
+  background-color: #000000;
+  transform: scale(1.05);
 }
 
 .info-overlay {
