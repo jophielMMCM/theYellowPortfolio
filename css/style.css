@@ -155,24 +155,62 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.6); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
   justify-content: center;
   align-items: center;
 }
 
+.modal.is-visible {
+  display: flex !important;
+}
+
 .modal-content {
   position: relative;
+  background-color: #111111;
+  border: 3px solid #ffcf00;
+  padding: 40px;
   width: 90%;
-  max-width: 800px;
-  background: #ffcf00;
-  padding: 6px;
+  max-width: 1000px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/*Note: to be fixed -- will resemble the info modals more */
+.modal-content iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  display: block;
+}
+
+.modal-content h2 {
+  color: #ffcf00;
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.modal-content .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #ffcf00;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-content .close-btn:hover {
+  color: #ffffff;
+}
 
 /* Gallery layout */
 .gallery-container {
@@ -189,7 +227,7 @@ a {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: 240px; 
-  gap: 20px;
+  gap: 12px;
   width: 100%;
 }
 
@@ -197,7 +235,7 @@ a {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: 240px; 
-  gap: 20px;
+  gap: 12px;
   width: 100%;
 }
 
@@ -215,14 +253,24 @@ a {
   }
 }
 
+.portfolio-grid:hover .grid-item,
+.work-grid:hover .grid-item {
+  opacity: 0.4;
+  filter: blur(2px) brightness(0.6);
+}
+
 .grid-item {
   width: 100%;
   height: 100%;
   overflow: hidden;
   background-color: #111111;
-  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
-              opacity 0.4s ease, 
-              filter 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              opacity 0.3s ease, 
+              filter 0.3s ease,
+              box-shadow 0.3s ease;
 }
 
 .grid-item img {
@@ -230,6 +278,15 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.portfolio-grid .grid-item:hover,
+.work-grid .grid-item:hover {
+  transform: scale(1.06);
+  opacity: 1 !important;
+  filter: blur(0) brightness(1.1) !important;
+  z-index: 10;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
 }
 
 /* Info modals */
@@ -362,24 +419,22 @@ a {
   text-decoration: none;
 }
 
-/* Project navigation */
 a.nav-btn {
-  position: fixed; /* Keeps arrows fixed on the left/right screen edges */
+  position: fixed;
   top: 50%;
   transform: translateY(-50%);
   background: transparent;
-  color: #ffcf00 !important; /* Forces your core theme yellow */
-  font-size: 5rem; /* Prominent size for high usability */
+  color: #ffcf00 !important;
+  font-size: 5rem;
   font-family: Arial, sans-serif;
-  text-decoration: none !important; /* Removes your default underline style */
+  text-decoration: none !important;
   cursor: pointer;
   opacity: 0.5;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  z-index: 100; /* Layered right below modals, above your image split layout */
+  z-index: 100;
   padding: 20px;
 }
 
-/* Hard positioning rules for left/right edges */
 .left-btn {
   left: 20px;
 }
@@ -388,10 +443,9 @@ a.nav-btn {
   right: 20px;
 }
 
-/* Subtle mouse interaction effects */
 a.nav-btn:hover {
   opacity: 1;
-  transform: translateY(-50%) scale(1.15); /* Slightly pops out toward the user */
+  transform: translateY(-50%) scale(1.15);
   text-decoration: none !important;
 }
 
@@ -400,4 +454,76 @@ a.nav-btn:hover {
   a.nav-btn {
     display: none !important;
   }
+}
+
+/* img-modal*/
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 3000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.image-modal-overlay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.image-modal-viewport {
+  width: 90%;
+  height: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#modal-target-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transform: scale(0.85);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.image-modal-overlay.is-visible #modal-target-img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#close-img-modal {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: none;
+  border: none;
+  color: #ffcf00;
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 3100;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+#close-img-modal:hover {
+  color: #ffffff;
+  transform: scale(1.1);
 }

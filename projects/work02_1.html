@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" type="image/png" href="../assets/images/ui/favicon.png">
     <script src="../js/gallery-grid.js" defer></script>
+    <script src="../js/img-modal.js" defer></script>    
 </head>
 <body>
     <a href="work02.html" class="returnLink">&#8630; Back to main</a>    
@@ -51,6 +52,12 @@
         </div>
     </div>
 
+    <div id="image-zoom-modal" class="image-modal-overlay">
+        <button id="close-img-modal">&times;</button>
+        <div class="image-modal-viewport">
+            <img id="modal-target-img" src="" alt="">
+        </div>
+    </div>
     <div class="yellow-line"></div>
 </body>
 </html>

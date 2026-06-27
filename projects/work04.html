@@ -12,10 +12,12 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" type="image/png" href="../assets/images/ui/favicon.png">
     <script src="../js/info-modal.js" defer></script>
+    <script src="../js/img-modal.js" defer></script>  
 </head>
 <body>
     <a href="work03.html" class="nav-btn left-btn" aria-label="Previous Project">&lsaquo;</a>
     <a href="work05.html" class="nav-btn right-btn" aria-label="Next Project">&rsaquo;</a>
+    
     <div class="split">
         <div class="display">
             <img src="../assets/images/items/4_01_PRA.jpg" alt="A young man passing between two cars, seemingly about to enter one of them, looking alert.">
@@ -26,10 +28,9 @@
             <p>An illustration</p>
             <div class="button-group">
                 <button id="open-info-btn">More Info</button>
-                <a href="work04_1.html" class="btn-link">
-                    <button id="open-mini-gallery">View Image</button>
-                </a>
+                <button id="open-mini-gallery" data-img-target="../assets/images/gallery/4_PRA_IMG.jpg">View Image</button>
             </div>
+            
             <div id="info-modal" class="info-overlay">
                 <div class="info-tab">
                     <button id="close-info-btn">&times;</button>
@@ -42,6 +43,14 @@
             </div>
         </div>
     </div>
+
+    <div id="image-zoom-modal" class="image-modal-overlay">
+        <button id="close-img-modal">&times;</button>
+        <div class="image-modal-viewport">
+            <img id="modal-target-img" src="" alt="">
+        </div>
+    </div>
+
     <img src="../assets/images/ui/decor_01.png" class="decor01">
     <img src="../assets/images/ui/typLogo.png" class="decor02">
 </body>
