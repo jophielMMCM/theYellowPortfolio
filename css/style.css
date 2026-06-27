@@ -14,7 +14,7 @@ body {
 
 /* Standard text formatting */
 h1 {
-  color: #FFC000;
+  color: #ffcf00;
   font-size: 2.8rem;
   font-weight: bold;
   margin-top: 0;
@@ -110,7 +110,7 @@ a {
   position: relative;
   width: 100%;
   height: 4px;
-  background-color: #FFC000;
+  background-color: #ffcf00;
   margin: 10px 0;
 }
 
@@ -121,7 +121,7 @@ a {
   top: -4px;
   width: 12px;
   height: 12px;
-  background-color: #FFC000;
+  background-color: #ffcf00;
 }
 
 .yellow-line::before { left: 0; }
@@ -145,12 +145,14 @@ a {
   position: relative;
   width: 90%;
   max-width: 800px;
-  background: #FFC000;
+  background: #ffcf00;
   padding: 6px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
+
+/*Note: to be fixed -- will resemble the info modals more */
 
 /* Gallery layout */
 .gallery-container {
@@ -212,7 +214,7 @@ a {
 
 /* Info modals */
 #open-info-btn, #open-mini-gallery {
-  background-color: #FFC000;
+  background-color: #ffcf00;
   color: #000000;
   border: none;
   font-family: Arial, sans-serif;
@@ -253,7 +255,7 @@ a {
 
 .info-tab {
   background-color: #111111;
-  border: 3px solid #FFC000;
+  border: 3px solid #ffcf00;
   padding: 40px 30px 30px 30px;
   width: 90%;
   max-width: 480px;
@@ -275,7 +277,7 @@ a {
 }
 
 .info-tab h2 {
-  color: #FFC000;
+  color: #ffcf00;
   font-size: 1.8rem;
   margin-top: 0;
   margin-bottom: 20px;
@@ -291,7 +293,7 @@ a {
 }
 
 .info-details strong {
-  color: #FFC000;
+  color: #ffcf00;
 }
 
 #close-info-btn {
@@ -300,7 +302,7 @@ a {
   right: 15px;
   background: none;
   border: none;
-  color: #FFC000;
+  color: #ffcf00;
   font-size: 32px;
   line-height: 1;
   cursor: pointer;
@@ -327,7 +329,7 @@ a.nav-btn {
   top: 50%;
   transform: translateY(-50%);
   background: transparent;
-  color: #FFC000 !important; /* Forces your core theme yellow */
+  color: #ffcf00 !important; /* Forces your core theme yellow */
   font-size: 5rem; /* Prominent size for high usability */
   font-family: Arial, sans-serif;
   text-decoration: none !important; /* Removes your default underline style */
