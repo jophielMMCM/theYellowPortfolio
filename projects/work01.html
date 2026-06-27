@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+	Creator: Jophiel Theo Rodriguez
+	Date: 27/06/2026
+ -->
+
+<head>
+    <title>The Waiting Room | The Yellow Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/video-modal.js" defer></script>
+    <script src="../js/info-modal.js" defer></script>
+</head>
+<body>
+    <a href="../gallery.html" class="returnLink">&#8630; Back to gallery</a>
+    <a href="work02.html" class="nav-btn right-btn" aria-label="Next Project">&rsaquo;</a>
+    <div class="split">
+        <div class="display">
+            <a href="#" id="openVideo" aria-label="Watch now">
+                <img src="../assets/images/items/1_01-TWR.jpg" alt="A still featuring two people sitting by a wall.">
+            </a>
+        </div>
+        <div class="text">
+            <h1>THE WAITING ROOM</h1>
+            <p>This micro-short film revolves around two visitors who are instructed to wait at a mysterious facility of sorts, and spend their brief time together getting to know each other as an ominous fate looms...</p>
+            <div class="button-group">
+                <button id="open-info-btn">More Info</button>
+            </div>
+            
+            <div id="info-modal" class="info-overlay">
+                <div class="info-tab">
+                    <button id="close-info-btn">&times;</button>
+                    <h2>Project Details</h2>
+                    <div class="info-details">
+                        <p><strong>Software:</strong> Premiere Pro, LMMS, Audacity, Media Encoder</p>
+                        <p><strong>Role:</strong> Writer-Director, Editor, Sound Mixer, Music Composer, Voice</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeVideo">&times;</span>
+            <div class="video-wrapper">
+                <iframe id="ytPlayer" src="https://www.youtube.com/embed/E5LcibaEBgE?enablejsapi=1" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <img src="../assets/images/ui/decor_01.png" class="decor01">
+</body>
+</html>

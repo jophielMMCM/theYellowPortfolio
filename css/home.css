@@ -1,0 +1,47 @@
+body {
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 !important;
+}
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.home-header img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.home-buttons {
+  justify-content: center !important;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.yellow-btn {
+  background-color: #FFC000;
+  color: #000000;
+  border: none;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.yellow-btn:hover {
+  background-color: #e0a800;
+}

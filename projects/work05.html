@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+	Creator: Jophiel Theo Rodriguez
+	Date: 27/06/2026
+ -->
+
+<head>
+    <title>Rubicon | The Yellow Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/video-modal.js" defer></script>
+    <script src="../js/info-modal.js" defer></script>
+</head>
+<body>
+    <a href="work04.html" class="nav-btn left-btn" aria-label="Previous Project">&lsaquo;</a>
+    <a href="work06.html" class="nav-btn right-btn" aria-label="Next Project">&rsaquo;</a>
+    <div class="split">
+        <div class="display">
+            <a href="#" id="openVideo" aria-label="Watch now">
+                <img src="../assets/images/items/5_01_RCN.jpg" alt="Overhead view of a girl on the side of a road.">
+            </a>
+        </div>
+        <div class="text">
+            <h1>RUBICON</h1>
+            <p>A 2D-animated short film about a girl missing the bus home. After she encounters with a malevolent entity on the way, she unexpectedly goes on a reality-defying journey through space and time.</p>
+            <div class="button-group">
+                <button id="open-info-btn">More Info</button>
+            </div>
+            <div id="info-modal" class="info-overlay">
+                <div class="info-tab">
+                    <button id="close-info-btn">&times;</button>
+                    <h2>Project Details</h2>
+                    <div class="info-details">
+                        <p><strong>Software: Animate, Krita, Photoshop, Premiere Pro, Audition, LMMS, Media Encoder</strong></p>
+                        <p><strong>Role: Director, Concept Creator, Character Designer, Background Artist, Animator, Sound Mixer, Music Composer, Editor</strong></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeVideo">&times;</span>
+            <div class="video-wrapper">
+                <iframe id="ytPlayer" src="https://www.youtube.com/embed/ZZFiXARm_fM?enablejsapi=1" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <img src="../assets/images/ui/decor_01.png" class="decor01">
+</body>
+</html>
