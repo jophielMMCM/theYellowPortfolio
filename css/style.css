@@ -1,6 +1,6 @@
 body {
-  background-color: #000000 !important;
-  color: #ffffff !important;
+  background-color: #000000;
+  color: #ffffff;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 5% 4%;
@@ -18,15 +18,35 @@ h1 {
   font-size: 2.8rem;
   font-weight: bold;
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-transform: uppercase;
 }
 
+h2 {
+  text-align: center;
+}
+
+h3, h4 {
+  color: #ffcf00;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
 p {
-  color: #E5E5E5 !important;
+  color: #E5E5E5;
   font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-top: 0;
+  margin-bottom: 20px;
   white-space: pre-line;
 }
 
@@ -34,6 +54,10 @@ a {
   color: #0066CC;
   text-decoration: underline;
   font-size: 1.1rem;
+}
+
+li {
+  margin: 0.4rem;
 }
 
 /* Project pages layout */
@@ -51,6 +75,7 @@ a {
 .display {
   flex: 1.2;
   width: 100%;
+  aspect-ratio: 16 / 9; 
   position: relative;
 }
 
@@ -67,7 +92,6 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  aspect-ratio: 16 / 9;
   border: none;
 }
 
@@ -82,21 +106,27 @@ a {
   position: absolute;
   top: 24px;
   left: 24px;
-  color: #ffcf00 !important;
-  text-decoration: none !important;
+  color: #ffcf00;
+  text-decoration: none;
   font-size: 1.6rem;
   font-weight: normal;
   letter-spacing: 1px;
   display: inline-block;
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+  z-index: 10;
 }
 
 .returnLink:hover {
-  color: #ffe680 !important;
+  color: #ffe680;
   transform: scale(1.15);
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
+.workHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
 
 /* Page decor */
 .decor01 {
@@ -145,6 +175,17 @@ a {
   pointer-events: none;
   z-index: 0;
   user-select: none;
+}
+
+/* Responsive Mobile Layout */
+@media (max-width: 768px) {
+  .split {
+    flex-direction: column;
+    gap: 30px;
+  }
+  body {
+    padding: 80px 20px 40px 20px; /* Prevents returnLink from covering text */
+  }
 }
 
 /* YouTube embeds */
@@ -447,13 +488,6 @@ a.nav-btn:hover {
   opacity: 1;
   transform: translateY(-50%) scale(1.15);
   text-decoration: none !important;
-}
-
-/* MOBILE AND TABLET OVERRIDE */
-@media (max-width: 768px) {
-  a.nav-btn {
-    display: none !important;
-  }
 }
 
 /* img-modal*/
