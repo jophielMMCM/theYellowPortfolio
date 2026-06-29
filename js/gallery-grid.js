@@ -24,17 +24,12 @@ window.addEventListener('DOMContentLoaded', () => {
         const itemsLeftIncludingThisOne = items.length - index;
         let chosenSpan = 2;
 
-        // FORCE TWO ROWS MAX FOR 7-8 ITEMS:
-        // If we are on row 2 (currentLineUnits is 0 because row 1 finished) and 
-        // the remaining items can cleanly split the 12 columns, force them to fill it.
         if (currentLineUnits === 0 && itemsLeftIncludingThisOne <= 4 && itemsLeftIncludingThisOne > 1) {
             chosenSpan = Math.floor(12 / itemsLeftIncludingThisOne);
         }
-        // ABSOLUTE LAST ITEM SAFETY: Fill whatever empty space remains on the current line
         else if (itemsLeftIncludingThisOne === 1) {
             chosenSpan = 12 - currentLineUnits;
         }
-        // STANDARD RANDOM SELECTION RUN:
         else {
             if (setIndex >= currentSet.length) {
                 const randomSetIndex = Math.floor(Math.random() * rowSets.length);
@@ -45,7 +40,6 @@ window.addEventListener('DOMContentLoaded', () => {
             setIndex++;
         }
 
-        // Final safety check to make sure random selections never overflow the grid bounds
         if (chosenSpan > (12 - currentLineUnits)) {
             chosenSpan = 12 - currentLineUnits;
         }
@@ -53,7 +47,6 @@ window.addEventListener('DOMContentLoaded', () => {
         item.style.gridColumn = `span ${chosenSpan}`;
         currentLineUnits += chosenSpan;
 
-        // Row tracker reset
         if (currentLineUnits >= 12) {
             currentLineUnits = 0;
         }

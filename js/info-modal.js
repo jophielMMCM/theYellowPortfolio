@@ -16,7 +16,6 @@ infoModal.addEventListener('click', (e) => {
   }
 });
 
-// Prevents nested button form submittal issues during keyboard navigation
 document.getElementById('open-mini-gallery').addEventListener('click', (e) => {
   e.stopPropagation();
 });

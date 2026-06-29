@@ -77,6 +77,8 @@ li {
   flex: 1.2;
   width: 100%;
   padding-top: 0px;
+  position: relative;
+  aspect-ratio: 16 / 9;
 }
 
 .display img {
@@ -177,14 +179,21 @@ li {
   user-select: none;
 }
 
-/* Responsive Mobile Layout */
+/* Mobile layout */
 @media (max-width: 768px) {
   .split {
     flex-direction: column;
     gap: 30px;
   }
   body {
-    padding: 80px 20px 40px 20px; /* Prevents returnLink from covering text */
+    padding: 80px 20px 40px 20px; 
+  }
+  h1, h2, h3, h4 {
+    text-align: center;
+  }
+  .decor01 {
+    width: 90%; 
+    bottom: 5%;
   }
 }
 
